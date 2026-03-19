@@ -1,10 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>ERM Dashboard</title>
+    <title>Higher Ed ERM Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        h1 { color: #2c3e50; }
+        canvas { max-width: 600px; }
+        table { border-collapse: collapse; margin-top: 30px; }
+        th, td { border: 1px solid #ccc; padding: 8px; }
+    </style>
 </head>
+
 <body>
-<h1>Higher Ed ERM Dashboard</h1>
-<p>This is a placeholder dashboard. Upload to GitHub Pages and connect data for visualization.</p>
+
+<h1>Higher Education ERM Dashboard (COSO + RCSA)</h1>
+
+<h2>Risk Heat Map</h2>
+<canvas id="heatmap"></canvas>
+
+<h2>Risk Register</h2>
+<table id="riskTable"></table>
+
+<script>
+fetch('data/risk_register.csv')
+.then(response => response.text())
+.then(csv => {
+    const rows = csv.split('\n').slice(1).map(r => r.split(','));
+
+    // Build table
+    let table = '<tr><th>Risk</th><th>Likelihood</th><th>Impact</th><th>Residual</th></tr>';
+    rows.forEach(r => {
+        if(r.length > 3){
+            table += `<tr>
+                <td>${r[1]}</td>
+                <td>${r[3]}</td>
+                <td>${r[4]}</td>
+                <td>${r[7]}</td>
+            </tr>`;
+        }
+    });
+    document.getElementById('riskTable').innerHTML = table;
+
+    // Heatmap data
+    const data = rows.map(r => ({
+        x: Number(r[3]),
+        y: Number(r[4]),
+        r: Number(r[7])
+    }));
+
+    new Chart(document.getElementById('heatmap'), {
+        type: 'bubble',
+        data: {
+            datasets: [{
+                label: 'Risks',
+                data: data
+            }]
+        },
+        options: {
+            scales: {
+                x: { title: { display: true, text: 'Likelihood' }, min: 0, max: 5 },
+                y: { title: { display: true, text: 'Impact' }, min: 0, max: 5 }
+            }
+        }
+    });
+});
+</script>
+
 </body>
 </html>

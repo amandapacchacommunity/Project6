@@ -1,0 +1,11 @@
+risk_id,risk_title,department,likelihood,impact,control_effectiveness,inherent_score,residual_score
+R001,Financial aid disbursement error,Financial Aid,4,5,Moderate,20,14.0
+R002,Enrollment decline,Admissions,3,5,Strong,15,7.5
+R003,Grant compliance violation,Grants,3,4,Moderate,12,8.399999999999999
+R004,Clery reporting delay,Compliance,2,4,Strong,8,4.0
+R005,Donor concentration risk,Advancement,3,4,Weak,12,10.8
+R006,Budget variance over threshold,Finance,4,5,Moderate,20,14.0
+R007,Segregation of duties failure,Finance,2,4,Strong,8,4.0
+R008,Restricted fund misuse,Finance,3,4,Moderate,12,8.399999999999999
+R009,Payroll overrun,HR,4,3,Weak,12,10.8
+R010,Data reporting inconsistency,Institutional Research,3,3,Moderate,9,6.3

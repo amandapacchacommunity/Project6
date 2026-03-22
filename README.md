@@ -1,21 +1,38 @@
-# Higher Education ERM Demo
+# Enterprise Risk & Control Self-Assessment (RCSA) Dashboard
+## COSO-Aligned and ISO 31000-Informed for Higher Education
 
-This project is a synthetic portfolio demonstration of a COSO-aligned Enterprise Risk Management framework using RCSA methodology in a higher education context.
+This repository demonstrates a synthetic multi-page dashboard for a decentralized higher education risk environment.
 
-## Scope
-The model includes representative institutional risks related to:
-- financial aid
-- grants compliance
-- budget variance
-- donor concentration
-- reporting and regulatory compliance
+## Included pages
 
-## Methodology
-- COSO ERM provides the governance structure
-- RCSA is used to identify risks, evaluate controls, and assess residual exposure
-- Risks are scored based on likelihood and impact
-- Residual risk is adjusted based on control effectiveness
-- Dashboard outputs support executive and committee-level reporting
+- `index.html` — Executive summary dashboard
+- `register.html` — Detailed RCSA register
+- `framework.html` — RCSA, COSO, and ISO 31000 mapping
+- `forecast.html` — Scenario forecasting and sensitivity view
+- `style.css` — Shared site styling
+- `script.js` — Shared logic and interactivity
+- `data.json` — Synthetic demo data
 
-## Disclaimer
-All data in this project is fully synthetic and created for portfolio demonstration purposes only.
+## Positioning
+
+This project is intentionally labeled to indicate all three concepts:
+
+- **RCSA** — the operating assessment method
+- **COSO** — internal control structure and governance
+- **ISO 31000** — enterprise risk management lens
+
+## Notes
+
+- All data is synthetic
+- No real institution names are used
+- No real people, vendors, unions, incidents, or contracts are represented
+- Built for portfolio, interview, and GitHub presentation purposes
+
+## GitHub Pages
+
+To publish:
+1. Upload all files to the repo root
+2. Go to **Settings > Pages**
+3. Choose **Deploy from a branch**
+4. Select `main` and `/ (root)`
+5. Save

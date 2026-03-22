@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RCSA Register</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="register">
+  <header class="sub-hero">
+    <div class="container">
+      <p class="eyebrow">RCSA Register</p>
+      <h1>Risk & Control Self-Assessment Register</h1>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Executive Summary</a>
+        <a href="register.html" class="nav-link active">RCSA Register</a>
+        <a href="framework.html" class="nav-link">Framework Mapping</a>
+        <a href="forecast.html" class="nav-link">Scenario Forecasting</a>
+      </nav>
+    </div>
+  </header>
 
+  <main class="container main-content">
+    <section class="panel">
+      <div class="filter-grid">
+        <div class="filter-row">
+          <label for="departmentFilter">Department</label>
+          <select id="departmentFilter">
+            <option value="All">All Departments</option>
+          </select>
+        </div>
+
+        <div class="filter-row">
+          <label for="cosoFilter">COSO Component</label>
+          <select id="cosoFilter">
+            <option value="All">All Components</option>
+          </select>
+        </div>
+
+        <div class="filter-row">
+          <label for="riskTypeFilter">Risk Category</label>
+          <select id="riskTypeFilter">
+            <option value="All">All Categories</option>
+          </select>
+        </div>
+
+        <div class="filter-row">
+          <label for="searchBox">Search</label>
+          <input id="searchBox" type="search" placeholder="Search risk, control, owner..." />
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="table-wrap">
+        <table id="rcsaTable">
+          <thead>
+            <tr>
+              <th>Department</th>
+              <th>Risk Category</th>
+              <th>Risk</th>
+              <th>Control</th>
+              <th>Impact</th>
+              <th>Likelihood</th>
+              <th>Inherent Risk</th>
+              <th>Control Effectiveness</th>
+              <th>Residual Risk</th>
+              <th>COSO Component</th>
+              <th>COSO Principle</th>
+              <th>ISO Stage</th>
+              <th>Owner</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Detailed synthetic RCSA register.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

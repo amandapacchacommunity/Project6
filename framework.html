@@ -1,1 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Framework Mapping</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="framework">
+  <header class="sub-hero">
+    <div class="container">
+      <p class="eyebrow">Framework Mapping</p>
+      <h1>RCSA, COSO, and ISO 31000 Alignment</h1>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Executive Summary</a>
+        <a href="register.html" class="nav-link">RCSA Register</a>
+        <a href="framework.html" class="nav-link active">Framework Mapping</a>
+        <a href="forecast.html" class="nav-link">Scenario Forecasting</a>
+      </nav>
+    </div>
+  </header>
 
+  <main class="container main-content">
+    <section class="grid-3">
+      <div class="panel">
+        <h2>RCSA</h2>
+        <p>
+          RCSA is the practical method used by departments to identify risks, assess control effectiveness,
+          and evaluate residual exposure.
+        </p>
+      </div>
+
+      <div class="panel">
+        <h2>COSO</h2>
+        <p>
+          COSO provides the internal control structure through its five components and related principles,
+          making it especially relevant to audit, compliance, finance, and governance teams.
+        </p>
+      </div>
+
+      <div class="panel">
+        <h2>ISO 31000</h2>
+        <p>
+          ISO 31000 provides the broader risk management lens, helping frame identification, analysis,
+          evaluation, treatment, and monitoring across the institution.
+        </p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>How they fit together</h2>
+      <div class="mapping-table-wrap">
+        <table class="mapping-table">
+          <thead>
+            <tr>
+              <th>Concept</th>
+              <th>Role in this dashboard</th>
+              <th>Why it matters</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>RCSA</td>
+              <td>Department-level risk and control assessment</td>
+              <td>Common language employers search for in operational risk and controls roles</td>
+            </tr>
+            <tr>
+              <td>COSO</td>
+              <td>Control structure, principles, and governance alignment</td>
+              <td>Widely recognized by internal audit, compliance, and finance teams</td>
+            </tr>
+            <tr>
+              <td>ISO 31000</td>
+              <td>Enterprise risk lifecycle and monitoring lens</td>
+              <td>Signals broader ERM literacy beyond controls-only thinking</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="grid-2">
+      <div class="panel">
+        <h2>COSO Coverage by Component</h2>
+        <canvas id="frameworkCosoChart" height="220"></canvas>
+      </div>
+
+      <div class="panel">
+        <h2>ISO 31000 Stage Coverage</h2>
+        <canvas id="isoStageChart" height="220"></canvas>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Sample narrative</h2>
+      <p class="summary-box">
+        This model demonstrates a Risk &amp; Control Self-Assessment approach aligned with COSO Internal Control and informed by ISO 31000 principles, tailored to a decentralized higher education environment where risks and controls are often distributed across academic and administrative units.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Framework alignment view for interviews, portfolios, or GitHub presentation.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

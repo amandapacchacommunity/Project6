@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scenario Forecasting</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="forecast">
+  <header class="sub-hero">
+    <div class="container">
+      <p class="eyebrow">Scenario Forecasting</p>
+      <h1>Risk Scenario and Control Sensitivity Dashboard</h1>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Executive Summary</a>
+        <a href="register.html" class="nav-link">RCSA Register</a>
+        <a href="framework.html" class="nav-link">Framework Mapping</a>
+        <a href="forecast.html" class="nav-link active">Scenario Forecasting</a>
+      </nav>
+    </div>
+  </header>
 
+  <main class="container main-content">
+    <section class="panel">
+      <h2>Scenario controls</h2>
+      <p class="muted">
+        Adjust synthetic assumptions to see how control conditions and operating pressures could influence impact and likelihood.
+      </p>
+
+      <div class="slider-grid">
+        <div class="slider-card">
+          <label for="incidentShift">Incident frequency shift</label>
+          <input type="range" id="incidentShift" min="-15" max="25" value="5" step="1" />
+          <div class="slider-value" id="incidentShiftValue">+5%</div>
+        </div>
+
+        <div class="slider-card">
+          <label for="controlShift">Control effectiveness shift</label>
+          <input type="range" id="controlShift" min="-20" max="20" value="4" step="1" />
+          <div class="slider-value" id="controlShiftValue">+4%</div>
+        </div>
+
+        <div class="slider-card">
+          <label for="budgetStress">Budget pressure</label>
+          <input type="range" id="budgetStress" min="0" max="25" value="6" step="1" />
+          <div class="slider-value" id="budgetStressValue">+6%</div>
+        </div>
+
+        <div class="slider-card">
+          <label for="complianceChange">Compliance complexity</label>
+          <input type="range" id="complianceChange" min="-10" max="20" value="3" step="1" />
+          <div class="slider-value" id="complianceChangeValue">+3%</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid-2">
+      <div class="panel">
+        <h2>Scenario summary</h2>
+        <p id="forecastSummary" class="summary-box"></p>
+      </div>
+
+      <div class="panel">
+        <h2>Scenario metrics</h2>
+        <div id="forecastMetrics" class="metric-list"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Interpretation</h2>
+      <p>
+        This page is not a predictive model. It is a synthetic sensitivity tool that shows how a higher education
+        risk profile might change when operating conditions, controls, and compliance pressure shift.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Forecasting is illustrative only and uses synthetic assumptions.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

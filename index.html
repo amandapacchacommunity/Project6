@@ -3,239 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Higher Education ERM Dashboard</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #222;
-      background: #f7f8fa;
-      line-height: 1.5;
-    }
-    header {
-      background: #1f3a5f;
-      color: white;
-      padding: 56px 24px;
-    }
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 32px 24px 56px;
-    }
-    section {
-      background: white;
-      margin-bottom: 24px;
-      padding: 24px;
-      border-radius: 10px;
-      box-shadow: 0 1px 6px rgba(0,0,0,0.08);
-    }
-    h1, h2, h3 {
-      margin-top: 0;
-    }
-    .subtitle {
-      font-size: 1.1rem;
-      max-width: 780px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 16px;
-      margin-top: 16px;
-    }
-    .card {
-      background: #f3f6fb;
-      padding: 18px;
-      border-radius: 8px;
-    }
-    .metric {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 4px;
-    }
-    .tag {
-      display: inline-block;
-      background: #e6eef8;
-      color: #1f3a5f;
-      padding: 4px 10px;
-      border-radius: 999px;
-      margin: 4px 6px 0 0;
-      font-size: 0.9rem;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 12px;
-    }
-    th, td {
-      text-align: left;
-      padding: 10px;
-      border-bottom: 1px solid #ddd;
-      vertical-align: top;
-    }
-    footer {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px 40px;
-      color: #555;
-      font-size: 0.95rem;
-    }
-  </style>
+  <title>RCSA | COSO | ISO 31000 Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <header>
-    <h1>Higher Education ERM Dashboard</h1>
-    <p class="subtitle">
-      A synthetic COSO-aligned enterprise risk management model using RCSA methodology
-      to illustrate how higher education institutions can identify, assess, monitor,
-      and report financial, compliance, and operational risks.
-    </p>
-  </header>
-
-  <main>
-    <section>
-      <h2>Executive Summary</h2>
-      <p>
-        This project demonstrates a practical ERM approach for higher education using
-        a centralized risk register, risk scoring, control evaluation, and dashboard-style
-        reporting. The model is built with synthetic data and reflects common institutional
-        risks such as financial aid errors, budget variance, donor concentration, grants
-        compliance, and reporting obligations.
+<body data-page="home">
+  <header class="hero">
+    <div class="container">
+      <p class="eyebrow">RCSA | COSO | ISO 31000</p>
+      <h1>Higher Education Risk & Control Dashboard</h1>
+      <p class="hero-subtitle">
+        A synthetic, portfolio-safe demonstration of a Risk & Control Self-Assessment
+        (RCSA) program aligned to COSO and informed by ISO 31000.
+      </p>
+      <p class="hero-note">
+        No real institution, people, vendors, unions, contracts, or incidents are represented.
       </p>
 
-      <div class="grid">
-        <div class="card">
-          <div class="metric">25</div>
-          <div>Total Risks</div>
-        </div>
-        <div class="card">
-          <div class="metric">6</div>
-          <div>High Residual Risks</div>
-        </div>
-        <div class="card">
-          <div class="metric">4</div>
-          <div>Departments Modeled</div>
-        </div>
-        <div class="card">
-          <div class="metric">8</div>
-          <div>Open Mitigation Actions</div>
-        </div>
+      <nav class="nav">
+        <a href="index.html" class="nav-link active">Executive Summary</a>
+        <a href="register.html" class="nav-link">RCSA Register</a>
+        <a href="framework.html" class="nav-link">Framework Mapping</a>
+        <a href="forecast.html" class="nav-link">Scenario Forecasting</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <section class="panel intro-panel">
+      <h2>What this dashboard demonstrates</h2>
+      <p>
+        This dashboard shows how a decentralized higher education environment could organize
+        its risk and control self-assessment process across departments, map controls to COSO,
+        and maintain an ISO 31000-informed enterprise risk view.
+      </p>
+      <div class="callout">
+        <strong>How to read this:</strong>
+        RCSA is the working method, COSO provides the internal control structure, and ISO 31000
+        provides the enterprise risk management lens.
       </div>
     </section>
 
-    <section>
-      <h2>Risk Domains</h2>
-      <p>
-        The synthetic dataset is organized around institutional risk areas commonly found
-        in higher education governance and finance environments.
-      </p>
-      <span class="tag">Financial Aid</span>
-      <span class="tag">Budget & Forecasting</span>
-      <span class="tag">Grants Compliance</span>
-      <span class="tag">Advancement & Donor Risk</span>
-      <span class="tag">Clery / Regulatory Reporting</span>
-      <span class="tag">Internal Controls</span>
-      <span class="tag">Data Quality</span>
-      <span class="tag">Operational Resilience</span>
+    <section id="kpiGrid" class="kpi-grid"></section>
+
+    <section class="grid-2">
+      <div class="panel">
+        <h2>Residual Risk Overview</h2>
+        <canvas id="residualRiskChart" height="220"></canvas>
+      </div>
+
+      <div class="panel">
+        <h2>COSO Component Coverage</h2>
+        <canvas id="cosoChart" height="220"></canvas>
+      </div>
     </section>
 
-    <section>
-      <h2>Methodology</h2>
-      <h3>COSO ERM Framework</h3>
-      <p>
-        COSO provides the overall governance structure for the model by connecting
-        institutional objectives, risk oversight, monitoring, and reporting.
-      </p>
+    <section class="grid-2">
+      <div class="panel">
+        <h2>Top Residual Risks</h2>
+        <div id="topRisks" class="top-risk-list"></div>
+      </div>
 
-      <h3>RCSA Method</h3>
-      <p>
-        Risk and Control Self-Assessment is used as the working assessment method.
-        Each risk is documented, scored for likelihood and impact, linked to key controls,
-        and evaluated for residual exposure after considering control effectiveness.
-      </p>
-
-      <h3>Scoring Logic</h3>
-      <p>
-        Inherent risk is calculated as likelihood × impact. Residual risk is then adjusted
-        based on control strength. This creates a simple but credible model for prioritizing
-        management attention and mitigation planning.
-      </p>
+      <div class="panel">
+        <h2>Department Snapshot</h2>
+        <div id="deptSummary" class="metric-list"></div>
+      </div>
     </section>
 
-    <section>
-      <h2>Illustrative Risk Examples</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Risk</th>
-            <th>Category</th>
-            <th>Example Control</th>
-            <th>Illustrative KRI</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Financial aid disbursement error</td>
-            <td>Financial / Compliance</td>
-            <td>Eligibility validation and secondary review</td>
-            <td>Error rate in aid disbursements</td>
-          </tr>
-          <tr>
-            <td>Grant restriction noncompliance</td>
-            <td>Financial / Compliance</td>
-            <td>Restricted fund reconciliation process</td>
-            <td>Number of grant exceptions</td>
-          </tr>
-          <tr>
-            <td>Budget variance over threshold</td>
-            <td>Financial</td>
-            <td>Monthly variance review with leadership</td>
-            <td>Variance percentage by department</td>
-          </tr>
-          <tr>
-            <td>Delayed regulatory reporting</td>
-            <td>Compliance</td>
-            <td>Reporting calendar and documented review workflow</td>
-            <td>Missed or late reporting deadlines</td>
-          </tr>
-          <tr>
-            <td>Donor concentration risk</td>
-            <td>Strategic / Financial</td>
-            <td>Portfolio diversification strategy</td>
-            <td>Revenue share from top donors</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section>
-      <h2>Dashboard Purpose</h2>
-      <p>
-        The dashboard is designed to support executive and committee-level reporting by
-        highlighting where residual risk remains elevated, where controls may need redesign,
-        and where trend indicators suggest emerging exposure. In a live implementation,
-        this section would include a risk heat map, top risk ranking, KRI trend views,
-        and department-level summaries.
-      </p>
-    </section>
-
-    <section>
-      <h2>Portfolio Relevance</h2>
-      <p>
-        This project demonstrates how governance, compliance, and data analysis can be
-        translated into a structured ERM model. It is intended as a portfolio example for
-        roles related to enterprise risk management, GRC, higher education compliance,
-        internal controls, audit analytics, and operational risk.
-      </p>
+    <section class="panel">
+      <h2>Executive Takeaway</h2>
+      <p id="executiveSummary" class="summary-box"></p>
     </section>
   </main>
 
-  <footer>
-    <p>
-      Disclaimer: All data and examples in this project are synthetic and created solely
-      for demonstration and portfolio purposes. They do not represent any real institution,
-      person, donor, student, or compliance matter.
-    </p>
+  <footer class="footer">
+    <div class="container">
+      <p>Synthetic higher education demo for RCSA, COSO, and ISO 31000 positioning.</p>
+    </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
